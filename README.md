@@ -12,7 +12,7 @@ https://github.com/diegoOgueta/leadzu/releases
 2. Use: **go build**
 
 ## Config.json
-Input your user and password on config.json
+Input your user and password in config.json file
 
 ````
 {
