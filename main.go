@@ -1,38 +1,15 @@
 package main
 
 import (
-	"encoding/json"
 	"errors"
 	"github.com/gocolly/colly/v2"
-	"io/ioutil"
 	"leadzu/structs"
 	"log"
-	"os"
 	"strings"
 )
 
-type Config structs.Config
-
-func NewConfig() Config {
-	jsonFile, err := os.Open("config.json")
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Printf("Successfully Opened config.json")
-	defer jsonFile.Close()
-
-	byteValue, _ := ioutil.ReadAll(jsonFile)
-
-	var config Config
-	json.Unmarshal(byteValue, &config)
-
-	return config
-}
-
 func main() {
-	configuration := NewConfig()
-
+	configuration := structs.NewConfig()
 	collector := colly.NewCollector()
 
 	err := collector.Post("https://www.leadzu.com/login/check", map[string]string{"user": configuration.User , "pass": configuration.Password})
