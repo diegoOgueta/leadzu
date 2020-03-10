@@ -1,5 +1,5 @@
 # Leadzu
-Faster work hours inputer
+The fastests work hours inputer
 
 
 ## Releases
